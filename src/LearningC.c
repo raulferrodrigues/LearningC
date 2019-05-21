@@ -11,7 +11,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-	printf("%d", EOF); /* prints hello, world */
+int main(void)
+{
+
+	enum boolean { NO = 'a', YES };
+
+	int n = YES;
+
+
 	return 0;
 }
+
