@@ -13,12 +13,26 @@
 
 int main(void)
 {
+  FILE *fp;
 
-	enum boolean { NO = 'a', YES };
+  fp = fopen("assets/bible.txt", "rw");
 
-	int n = YES;
+  if (fp == NULL)
+  {
+    return 1;
+  }
 
+  long int lines = 0;
+  char ch;
+  while((ch = fgetc(fp)) != EOF)
+  {
+    if(ch == '\n') lines++;
+  }
 
-	return 0;
+  printf("Number of lines: %li", lines);
+
+  fclose(fp);
+
+  return 0;
 }
 
