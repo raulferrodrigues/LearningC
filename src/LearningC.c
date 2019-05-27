@@ -23,13 +23,22 @@ int main(void)
   }
 
   long int lines = 0;
+
+  int array[512];
+
   char ch;
+
   while((ch = fgetc(fp)) != EOF)
   {
+    array[ch - 97]++;
     if(ch == '\n') lines++;
   }
 
-  printf("Number of lines: %li", lines);
+  printf("Number of lines: %li\n", lines);
+
+  for(int n = 0; n < 26; n++) {
+      printf("%c: %d\n", n + 97, array[n]);
+  }
 
   fclose(fp);
 
